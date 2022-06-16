@@ -6,6 +6,9 @@ import SignUpPage from "./page/SignUp/SignUpPage";
 import HomePage from "./page/Home/HomePage";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import AdminPage from "./page/Admin/AdminPage";
+import { Dashboard } from "@mui/icons-material";
+import NotFound from "./page/NotFound/NotFound";
+import Success from "./page/Success/Success";
 
 const useAuth = () => localStorage.getItem("token");
 function PrivateRoute({ children }) {
@@ -29,7 +32,9 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/admin" element={<AdminPage />} />
-          <Route path="/dashboard" element={Dashboard} />
+          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/success" element={<Success/>}/>
+          <Route path="*" element={<NotFound />} />
 
           {/* <PrivateRoute
           path="/private"

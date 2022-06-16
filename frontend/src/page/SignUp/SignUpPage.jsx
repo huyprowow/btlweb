@@ -51,7 +51,7 @@ const SignUpPage = () => {
                     setIsLoading(false);
                     setSuccessMsg(res.data.message);
                     setTimeout(() => {
-                        navigate("/login");
+                        navigate("/success");
                     }, 1850);
 
                 }
