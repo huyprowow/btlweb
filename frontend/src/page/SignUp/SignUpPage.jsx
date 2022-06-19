@@ -7,7 +7,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import SignUpBg from "../../assets/signupbg.png";
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
- import "./style.scss"
+import "./style.scss"
 const SignUpPage = () => {
     const [password, setPassword] = useState("");
     const [userName, setUserName] = useState("");
@@ -24,6 +24,9 @@ const SignUpPage = () => {
             navigate("/");
         }
     });
+    const handleKeyDown = (e) => {
+        e.key === "Enter" && handleSignUp();
+    }
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -40,7 +43,7 @@ const SignUpPage = () => {
     };
     const handleSignUp = (e) => {
         setIsLoading(true);
-        e.preventDefault();
+        // e.preventDefault();
         const newAcc = { email, userName, password };
         console.log(newAcc)
         http
@@ -111,6 +114,8 @@ const SignUpPage = () => {
                         value={email}
                         type="email"
                         onChange={handleChange}
+                        onKeyDown={handleKeyDown}
+
                     />
                     <TextField
                         required
@@ -122,6 +127,7 @@ const SignUpPage = () => {
                         variant="standard"
                         value={userName}
                         onChange={handleChange}
+                        onKeyDown={handleKeyDown}
                     />
                     <FormControl variant="standard">
                         <InputLabel htmlFor="standard-adornment-password">Password *</InputLabel>
@@ -132,6 +138,7 @@ const SignUpPage = () => {
                             name="password"
                             value={password}
                             onChange={handleChange}
+                            onKeyDown={handleKeyDown}
                             endAdornment={
                                 <InputAdornment position="end">
                                     <IconButton
@@ -145,14 +152,14 @@ const SignUpPage = () => {
                             }
                         />
                     </FormControl>
-                    {error && error.map((err) => <span className="msg-error">{err}<ClearIcon fontSize="sm" /></span>)}
+                    {error && error.map((err, i) => <span className="msg-error" key={i}>{err}<ClearIcon fontSize="sm" /></span>)}
                     {successMsg && <span className="msg-success">{successMsg}<CheckIcon fontSize="sm" /></span>}
                     <Button
                         variant="outlined"
                         color="success"
                         id="btn"
                         onClick={handleSignUp}>
-                       {isLoading?<CircularProgress size={24.5} color="success" />: "SignUp"}
+                        {isLoading ? <CircularProgress size={24.5} color="success" /> : "SignUp"}
                     </Button>
                 </Container>
             </Grid>

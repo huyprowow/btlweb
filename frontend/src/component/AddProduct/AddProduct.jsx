@@ -111,7 +111,7 @@ const AddProduct = () => {
     })
   }
   return (
-    <Stack direction={"row"} justifyContent={"center"} alignItems={"center"} height={"100vh"} bgcolor={"#faf0e6"}>
+    <Stack direction={"row"} justifyContent={"center"} alignItems={"center"} height={"100vh"} bgcolor={"#faf0e6"} id="add-product">
       <Grid item xs={12} sm={6} md={4}>
         <Paper sx={{
           padding: '1rem',
@@ -119,7 +119,7 @@ const AddProduct = () => {
         }}
           elevation={3}
         >
-          <Typography variant="h5" component="h5" textAlign={"center"} fontFamily={"Quicksand"}>
+          <Typography variant="h5" component="h5" textAlign={"center"}>
             Do you want add some thing new?
           </Typography>
           <Stack direction="row" spacing={2}>
@@ -214,7 +214,7 @@ const AddProduct = () => {
           {/* <Stack direction="row" spacing={2}>*/}
           <Grid container>
             <Grid item xs={10}>
-              {error && error.map((err) => <span className="msg-error">{err}<ClearIcon fontSize="sm" /></span>)}
+              {error && error.map((err,i) => <span className="msg-error" key={i}>{err}<ClearIcon fontSize="sm" /></span>)}
             </Grid>
             <Grid item xs={2}>
               <Button
@@ -231,7 +231,7 @@ const AddProduct = () => {
       </Grid>
       <Grid item xs={12} sm={6} md={5} sx={{
         display: {
-          xs:"none",sm: 'inline',
+          xs: "none", sm: 'inline',
         }
       }}>
         <img

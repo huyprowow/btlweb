@@ -1,5 +1,12 @@
 {
-  "name": "frontend",
+  "name": "tap hoa",
+  "author": "Huy <huyprowow@gmail.com> (https://huyprowow.github.io/)",
+  "contributors": [
+    "Huy",
+    "Thai",
+    "Thang"
+  ],
+  "description": "project create for final exam subject 'nen tang phat trien web'",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3080",

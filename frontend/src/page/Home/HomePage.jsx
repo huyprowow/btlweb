@@ -1,9 +1,15 @@
 import React from 'react'
+import NavBar from '../../component/Navbar/NavBar'
 
 const HomePage = () => {
   return (
-      <div>HomePage</div>
-     
+    <>
+      <NavBar />
+      <div 
+      // style={{height:"200vh"}}
+      >HomePage</div>
+    </>
+
   )
 }
 

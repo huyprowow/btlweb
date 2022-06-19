@@ -1,7 +1,12 @@
 {
-  "name": "shop-do-an",
-  "author": "",
-  "description": "A dummy MERN stack project create to practice",
+  "name": "tap hoa",
+  "author": "Huy <huyprowow@gmail.com> (https://huyprowow.github.io/)",
+  "contributors": [
+    "Huy",
+    "Thai",
+    "Thang"
+  ],
+  "description": "project create for final exam subject 'nen tang phat trien web'",
   "version": "1.0.0",
   "private": true,
   "main": "index.js",

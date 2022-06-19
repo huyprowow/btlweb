@@ -24,6 +24,10 @@ const LoginPage = (props) => {
             navigate("/");
         }
     });
+    const handleKeyDown = (e) => {
+        e.key === "Enter" && handleSignIn();
+        console.log(e.key)
+    }
 
     const handleChange = (e) => {
         e.preventDefault();
@@ -37,7 +41,7 @@ const LoginPage = (props) => {
     };
     const handleSignIn = (e) => {
         setIsLoading(true);
-        e.preventDefault();
+        // e.preventDefault();
         http
             .post("/accounts/signin", {
                 userName: userName,
@@ -46,15 +50,15 @@ const LoginPage = (props) => {
             .then((res) => {
                 const token = res.data.token?.split(" ")[1]; //lay phan sau cua token (sau "Bearer ")
                 localStorage.setItem("token1", token); ///! => chac chan co token
-               const info=JSON.stringify(res.data.account);
-                localStorage.setItem("userInformation",info);
+                const info = JSON.stringify(res.data.account);
+                localStorage.setItem("userInformation", info);
                 // console.log(localStorage.getItem("token"));
                 setIsLoading(false);
                 setSuccessMsg(res.data.message);
-                if(res.data.account.role === "admin"){
+                if (res.data.account.role === "admin") {
                     navigate("/admin");
-                }else{
-                    navigate("/dashboard");
+                } else {
+                    navigate("/profile");
                 }
             })
             .catch((err) => {
@@ -108,6 +112,7 @@ const LoginPage = (props) => {
                         variant="standard"
                         value={userName}
                         onChange={handleChange}
+                        onKeyDown={handleKeyDown}
                     />
 
                     <FormControl variant="standard">
@@ -119,6 +124,7 @@ const LoginPage = (props) => {
                             name="password"
                             value={password}
                             onChange={handleChange}
+                            onKeyDown={handleKeyDown}
                             endAdornment={
                                 <InputAdornment position="end">
                                     <IconButton
@@ -132,14 +138,14 @@ const LoginPage = (props) => {
                             }
                         />
                     </FormControl>
-                    {error && error.map((err) => <span className="msg-error">{err}<ClearIcon fontSize="sm" /></span>)}
+                    {error && error.map((err, i) => <span className="msg-error" key={i}>{err}<ClearIcon fontSize="sm" /></span>)}
                     {successMsg && <span className="msg-success">{successMsg}<CheckIcon fontSize="sm" /></span>}
                     <Button
                         variant="outlined"
                         color="success"
                         id="btn"
                         onClick={handleSignIn}>
-                        {isLoading ? <CircularProgress size={24.5} color="success" /> : "SignUp"}
+                        {isLoading ? <CircularProgress size={24.5} color="success" /> : "Login"}
                     </Button>
                 </Container>
             </Grid>

@@ -10,7 +10,7 @@ exports.get_product_list = (req, res, next) => {
   });
 };
 exports.get_single_product = (req, res, next) => {
-  Product.findById(req.params.id).exec((err, product) => {
+  Product.findById(req.body.id).exec((err, product) => {
     if (err) return next(err);
     res.json(product);
   });
@@ -36,7 +36,7 @@ exports.create_product = [
     .not()
     .isEmpty()
     .withMessage("product type is required"),
-    body("number")
+  body("number")
     .trim()
     .escape()
     .not()

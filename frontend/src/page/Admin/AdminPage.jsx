@@ -11,10 +11,10 @@ import Overview from '../../component/Overview/Overview';
 import AddProduct from '../../component/AddProduct/AddProduct';
 import Invoice from '../../component/Invoice/Invoice';
 const AdminPage = () => {
-    const [content, setContent] = useState("addProduct");
+    const [content, setContent] = useState("overview");
     const navigate = useNavigate()
-    const goToDashBoard = () => {
-        navigate("/dashboard");
+    const goToProfile = () => {
+        navigate("/profile");
     }
 
     const handleChangeFeature = (feature) => {
@@ -29,13 +29,20 @@ const AdminPage = () => {
             <Grid item xs={12} sm={12} md={2}>
                 <Box sx={{ display: "flex", alignContent: "center", margin: "10px" }}>
                     {/* <img src="/images/AdminAvatar.jpg" alt="" width={100} height={100} /> */}
-                    <Avatar alt="admin" src={AdminAvatar} />
+                    <Avatar alt="admin" src={AdminAvatar} sx={{cursor:"pointer"}} onClick={()=>navigate("/")} />
                     <Typography variant="h5" component="h5" sx={{ alignSelf: "flex-end" }}>
                         Admin
                     </Typography>
                 </Box>
                 <Divider />
-                <List>
+                <List sx={{
+                    display: {
+                        xs: "flex",
+                        sm: "block",
+                        // md: "block"
+                    }
+                }}
+                >
                     <ListItem disablePadding sx={{
                     }}
                         selected={content === "overview"}

@@ -1,7 +1,12 @@
 {
   "name": "btl-web",
-  "author": "",
-  "description": "",
+  "author": "Huy <huyprowow@gmail.com> (https://huyprowow.github.io/)",
+  "contributors": [
+    "Huy",
+    "Thai",
+    "Thang"
+  ],
+  "description": "project create for final exam 'nen tang phat trien web'",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

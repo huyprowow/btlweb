@@ -25,7 +25,6 @@ const Success = () => {
                     sx={{
                         color: '#50C878',
                         fontWeight: 'bold',
-                        fontFamily: 'Quicksand',
                         textAlign: 'center',
                     }}>
                     Successful

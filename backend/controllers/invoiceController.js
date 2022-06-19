@@ -80,9 +80,9 @@ exports.create_invoice = [
             Price: ${req.body.price}$ 
             Number: ${req.body.number} 
             Total: ${req.body.price * req.body.number} \n
-            We will deliver the product soon this to the: ${
+            We will soon deliver this product to: ${
               req.body.address
-            }, the address you provided for us.\n
+            }, address that you have provided to us.\n
             Thank you for your purchase.
             Sincerely.
             Huy
