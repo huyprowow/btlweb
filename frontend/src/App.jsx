@@ -3,6 +3,9 @@ import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import LoginPage from "./page/Login/LoginPage";
 import SignUpPage from "./page/SignUp/SignUpPage";
+import DashboardPage from "./page/Dashboard/DashboardPage";
+import ViewProductPage from "./page/ViewProduct/ViewProductPage";
+
 import HomePage from "./page/Home/HomePage";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import AdminPage from "./page/Admin/AdminPage";
@@ -29,8 +32,8 @@ const App = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/admin" element={<AdminPage />} />
-          <Route path="/dashboard" element={Dashboard} />
-
+          <Route path="/dashboard" element={<DashboardPage/>}/>
+          <Route path="/viewproduct" element={<ViewProductPage/>}/>
           {/* <PrivateRoute
           path="/private"
           element={
