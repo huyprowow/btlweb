@@ -1,7 +1,12 @@
 {
-  "name": "shop-do-an",
-  "author": "",
-  "description": "A dummy MERN stack project create to practice",
+  "name": "tap hoa",
+  "author": "Huy <huyprowow@gmail.com> (https://huyprowow.github.io/)",
+  "contributors": [
+    "Huy",
+    "Thai",
+    "Thang"
+  ],
+  "description": "project create for final exam subject 'nen tang phat trien web'",
   "version": "1.0.0",
   "private": true,
   "main": "index.js",
@@ -21,9 +26,12 @@
     "luxon": "^2.0.2",
     "mongoose": "^6.0.12",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.7.5",
     "path": "^0.12.7",
-    "socket.io": "^4.4.1"
+    "sharp": "^0.30.6",
+    "socket.io": "^4.4.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"
