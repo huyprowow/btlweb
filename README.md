@@ -14,5 +14,5 @@ run project: ``` npm run dev ```
 - ADMIN_EMAIL_ADDRESS: must be add to test app and grant permission in google dev console
 - GOOGLE_MAILER_CLIENT_ID, GOOGLE_MAILER_CLISECRET you can get in google dev console
 ## Tech-stack:
-- Frontend: Reactjs, React router dom, Sass, MaterialUI
+- Frontend: Reactjs, React router dom, Sass, MaterialUI, Bootstrap
 - Backend: Nodejs, Express, MongoDB, Mongoose, OAuth2

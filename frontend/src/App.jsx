@@ -12,7 +12,7 @@ import AdminPage from "./page/Admin/AdminPage";
 import NotFound from "./page/NotFound/NotFound";
 import Success from "./page/Success/Success";
 import ProfilePage from "./page/Profile/ProfilePage";
-import ViewProductPage from "./page/ViewProduct/ViewProductPage";
+import ChatPage from "./page/Chat/ChatPage";
 
 // import { createTheme } from '@mui/material/styles'
 // import { ThemeProvider } from '@emotion/react';
@@ -50,6 +50,8 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/success" element={<Success />} />
           <Route path="/product/:id" element={<ViewProductPage/>}/>
+          {/* <Route path="/chat/:roomID" element={<Chat/>}/> */}
+          <Route path="/chat" element={<ChatPage/>}/>
           <Route path="*" element={<NotFound />} />
 
           {/* <PrivateRoute

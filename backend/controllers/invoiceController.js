@@ -2,6 +2,12 @@ const Invoice = require("../models/invoice");
 const { body, validationResult } = require("express-validator");
 const nodemailer = require("nodemailer");
 const { OAuth2Client } = require("google-auth-library");
+const moneyDollarFormat = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 4,
+  roundingIncrement: 1,
+});
 
 const {
   ADMIN_EMAIL_ADDRESS,
@@ -77,9 +83,9 @@ exports.create_invoice = [
             text: `
             Hello ${req.body.userName},\n
             Name: ${req.body.name} 
-            Price: ${req.body.price}$ 
+            Price: $${req.body.price} 
             Number: ${req.body.number} 
-            Total: ${req.body.price * req.body.number} \n
+            Total: ${moneyDollarFormat.format(req.body.price * req.body.number)} \n
             We will soon deliver this product to: ${
               req.body.address
             }, address that you have provided to us.\n
