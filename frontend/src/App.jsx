@@ -3,6 +3,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import LoginPage from "./page/Login/LoginPage";
 import SignUpPage from "./page/SignUp/SignUpPage";
+import ViewProductPage from "./page/ViewProduct/ViewProductPage";
+
 import HomePage from "./page/Home/HomePage";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import AdminPage from "./page/Admin/AdminPage";
