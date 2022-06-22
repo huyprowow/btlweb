@@ -52,7 +52,7 @@ const LoginPage = (props) => {
                 localStorage.setItem("token1", token); ///! => chac chan co token
                 const info = JSON.stringify(res.data.account);
                 localStorage.setItem("userInformation", info);
-                // console.log(localStorage.getItem("token"));
+                // console.log(localStorage.getItem("token1"));
                 setIsLoading(false);
                 setSuccessMsg(res.data.message);
                 if (res.data.account.role === "admin") {

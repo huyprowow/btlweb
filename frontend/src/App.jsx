@@ -10,6 +10,7 @@ import AdminPage from "./page/Admin/AdminPage";
 import NotFound from "./page/NotFound/NotFound";
 import Success from "./page/Success/Success";
 import ProfilePage from "./page/Profile/ProfilePage";
+import ViewProductPage from "./page/ViewProduct/ViewProductPage";
 
 // import { createTheme } from '@mui/material/styles'
 // import { ThemeProvider } from '@emotion/react';
@@ -22,7 +23,7 @@ const theme = createTheme({
     ].join(','),
   },
 });
-const useAuth = () => localStorage.getItem("token");
+const useAuth = () => localStorage.getItem("token1");
 function PrivateRoute({ children }) {
   const auth = useAuth();
   return auth ? children : <Navigate to="/login" />;
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/success" element={<Success />} />
+          <Route path="/product/:id" element={<ViewProductPage/>}/>
           <Route path="*" element={<NotFound />} />
 
           {/* <PrivateRoute

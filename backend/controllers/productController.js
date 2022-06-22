@@ -10,7 +10,7 @@ exports.get_product_list = (req, res, next) => {
   });
 };
 exports.get_single_product = (req, res, next) => {
-  Product.findById(req.body.id).exec((err, product) => {
+  Product.findById(req.params.id).exec((err, product) => {
     if (err) return next(err);
     res.json(product);
   });
@@ -94,3 +94,14 @@ exports.create_product = [
     }
   },
 ];
+exports.get_related_product =async (req, res, next) => {
+  const relatedProduct = await Product.aggregate([
+    {
+      $match: {
+        type: req.body.type,
+      }
+    },
+    { $sample: { size: 4 } }
+  ]);
+  res.status(200).json(relatedProduct);
+}

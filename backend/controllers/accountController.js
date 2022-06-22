@@ -188,6 +188,7 @@ exports.signin_account = [
                   _id: account._id,
                   userName: account.userName,
                   role: account.role,
+                  email: account.email,
                 },
                 token: accessToken,
               });
@@ -206,3 +207,13 @@ exports.signin_account = [
     }
   },
 ];
+// exports.get_email_by_userName=(req,res,next)=>{
+//   Account.findOne({userName:req.body.userName}).exec((err,account)=>{
+//     if(err) return next(err);
+//     if(account){
+//       res.status(200).json({
+//         email:account.email
+//       })
+//     }
+//   })
+// }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Avatar, Divider, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
@@ -13,9 +13,15 @@ import Invoice from '../../component/Invoice/Invoice';
 const AdminPage = () => {
     const [content, setContent] = useState("overview");
     const navigate = useNavigate()
-    const goToProfile = () => {
-        navigate("/profile");
-    }
+    // useEffect(() => {
+    //     const {role}=JSON.parse(localStorage.getItem("userInformation"));
+    //     if(role!=="admin"){
+    //         navigate("/")
+    //     }
+    // }, [])
+    // const goToProfile = () => {
+    //     navigate("/profile");
+    // }
 
     const handleChangeFeature = (feature) => {
         setContent(feature);

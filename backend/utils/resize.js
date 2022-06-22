@@ -9,8 +9,8 @@ class Resize {
     const fileName = Resize.fileName();
     const filePath = this.filePath(fileName);
     await sharp(buffer)
-      .resize(1920, 1080, {
-        // resize image 300x300 mo qua nen cho thanh 1920x1080 nhu the nay
+      .resize(700, 500, {
+        // resize image 300x300 mo qua nen cho thanh 700x500 nhu the nay
         fit: sharp.fit.inside,
         withoutEnlargement: true,
       })
