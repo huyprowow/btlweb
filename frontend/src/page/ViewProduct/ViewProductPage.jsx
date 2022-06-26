@@ -60,7 +60,7 @@ const ViewProductPage = () => {
             email: email,
             name: product.name,
             price: product.price,
-            number: product.number,
+            number: quantity,
             address: address,
         }).then((res) => {
             console.log(res)
@@ -130,7 +130,7 @@ const ViewProductPage = () => {
                                     }
                                 </div>
                                 <div className="product-content-right-button" >
-                                    <button disabled={role || product.number ? false : true} onClick={handleClick}>
+                                    <button disabled={role && product.number ? false : true} onClick={handleClick}>
                                         <i className="fas fa-shopping-cart"></i>
                                         <p>Mua Ngay</p>
                                     </button>
@@ -216,7 +216,7 @@ const ViewProductPage = () => {
                         {
                             relatedProducts.map((product, index) => {
                                 return (
-                                    <div className="product-related-item" onClick={()=>handleRelatedClick(product._id)}>
+                                    <div className="product-related-item" onClick={() => handleRelatedClick(product._id)}>
                                         <img src={product.image} alt="Ảnh" />
                                         <h1>{product.name}</h1>
                                         <p>

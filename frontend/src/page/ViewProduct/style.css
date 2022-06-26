@@ -158,6 +158,9 @@
   width: 35px;
   height: 23px;
   padding-left: 2px;
+  position: relative;
+  top: 10px;
+  left: 5px;
 }
 .product-content-right-button button {
   width: 220px;

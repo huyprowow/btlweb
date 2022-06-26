@@ -33,7 +33,7 @@ const CircleProgressCustom2 = (props) => {
         };
     }, [total]);
     return (
-        <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+        <Box sx={{ position: 'relative', display: { xs: 'flex', sm: "flex", md: 'inline-flex' } ,justifyContent:"center"}}>
             <CircularProgress variant="determinate" sx={{ color: "#ffde3a" }} size={200} thickness={3} value={progress} />
             <Box
                 sx={{

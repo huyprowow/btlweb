@@ -138,9 +138,11 @@ const NavBar = (props) => {
                                     maxHeight: 66,
                                     maxWidth: 120,
                                     display: { xs: 'inline', md: 'none' },
+                                    cursor: "pointer"
                                 }}
                                 alt="Logo"
                                 src={Logo}
+                                onClick={() => navigate("/")}
                             />
                         </Grid>
 

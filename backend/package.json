@@ -43,12 +43,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huyprowow/shop-do-an.git"
+    "url": "git+https://github.com/huyprowow/btlweb.git"
   },
   "keywords": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/huyprowow/shop-do-an/issues"
+    "url": "https://github.com/huyprowow/btlweb/issues"
   },
-  "homepage": "https://github.com/huyprowow/shop-do-an#readme"
+  "homepage": "https://github.com/huyprowow/btlweb#readme",
+  "engines": {
+    "node":"14.17.5"
+  }
 }

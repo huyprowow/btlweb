@@ -9,18 +9,22 @@ const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [allTypes, setAllTypes] = useState([]);
   const [filter, setFilter] = useState('');
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   console.log(filter)
   useEffect(() => {
     httpBase.get("/").then((res) => {
       setProducts(res.data);
       setAllTypes(res.data.map((product) => product.type));
-      console.log(products)
+      if (res.data.length > 0) {
+        setFilter(res.data[0].type);
+      }
     }).catch((err) => {
       console.log(err);
     })
 
   }, [])
+  // console.log(products)
+  // console.log(allTypes)
   const onlyUnique = (value, index, self) => {
     return self.indexOf(value) === index;
   }
@@ -73,7 +77,7 @@ const HomePage = () => {
                     }
                   </div>
                 </div>
-                <div className="btn-slick-wrapper">
+                {/* <div className="btn-slick-wrapper">
                   <div className="btn-slick btn-next">
                     <a href="#">
                       <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -84,16 +88,16 @@ const HomePage = () => {
                       <ion-icon name="chevron-back-outline"></ion-icon>
                     </a>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
           <div className="wrap-products">
             {
-              products.map((product, index) => {
+              products.filter((product) => product.type === filter).map((product, index) => {
                 return (
 
-                  <div className="item-product" key={product._id} onClick={()=>handleClick(product._id)}>
+                  <div className="item-product" key={product._id} onClick={() => handleClick(product._id)}>
                     <div className="img-product">
                       <img src={product.image} alt="" width={"100%"} height={"100%"} />
                     </div>

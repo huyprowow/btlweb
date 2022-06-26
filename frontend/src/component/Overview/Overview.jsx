@@ -42,28 +42,42 @@ const Overview = () => {
       <Typography variant="h4" component="h4" id="title" gutterBottom textAlign={"center"}>
         Overview
       </Typography>
-      <Grid container width={"100%"} >
-        <Stack direction="row" justifyContent={"space-evenly"} alignItems={"flex-end"} width={"100%"}>
-          <Grid >
+      <Grid container width={"100%"}
+        height={{
+          xs: "100%",
+          sm: "auto",
+          md: "auto",
+        }}
+      >
+        <Stack direction={{ sm: "row" }} justifyContent={"space-evenly"} alignItems={"flex-end"} width={"100%"} sx={{
+          display: {
+            xs: "grid", sm: "flex"
+          },
+          gridTemplateAreas: `
+          "top top"
+          "left right"
+          `,
+        }}>
+          <Grid gridArea={"left"}>
             <CircleProgressCustom total={numberUser} />
             <Typography variant="h6" component="h6" id="title" gutterBottom textAlign={"center"}>
               Number User
             </Typography>
           </Grid>
-          <Grid>
+          <Grid gridArea={"top"} gridColumn="1/span 2">
             <CircleProgressCustom2 total={totalRevenue} />
             <Typography variant="h6" component="h6" id="title" gutterBottom textAlign={"center"}>
               Total Revenue
             </Typography>
           </Grid>
-          <Grid>
+          <Grid gridArea={"right"}>
             <CircleProgressCustom3 total={numberProduct} />
             <Typography variant="h6" component="h6" id="title" gutterBottom textAlign={"center"}>
               Number Product
             </Typography>
           </Grid>
         </Stack>
-      </Grid>
+      </Grid >
     </>
   )
 }

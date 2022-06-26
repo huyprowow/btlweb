@@ -10,7 +10,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-
+const moneyDollarFormat = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 4,
+    roundingIncrement: 1,
+  });
 const Invoice = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -70,7 +75,7 @@ const Invoice = () => {
             name: item.name,
             price: item.price,
             number: item.number,
-            total: item.price * item.number,
+            total:moneyDollarFormat.format(item.price * item.number),
             delete: <ClearRoundedIcon sx={{
                 "&:hover": {
                     cursor: "pointer"
