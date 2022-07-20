@@ -17,7 +17,4 @@ run project: ``` npm run dev ```
 - Frontend: Reactjs, React router dom, Sass, MaterialUI, Bootstrap
 - Backend: Nodejs, Express, MongoDB, Mongoose, OAuth2
 # Link deploy
-[Convinient Store](https://taphoa.herokuapp.com/)  
-## account admin for deploy test:  
-username: admin  
-password: admin 
+[Convinient Store](https://taphoa.herokuapp.com/)
